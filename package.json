@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "batto-utils",
+  "author": "Tomas Batto",
+  "module": "dist/batto-utils.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/batto-utils.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/batto-utils.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@shopify/jest-koa-mocks": "^3.0.1",
+    "@size-limit/preset-small-lib": "^4.11.0",
+    "@types/koa": "^2.13.3",
+    "husky": "^6.0.0",
+    "size-limit": "^4.11.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.2.0",
+    "typescript": "^3.9.9"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "koa": "^2.13.1"
+  }
+}
