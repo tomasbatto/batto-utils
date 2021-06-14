@@ -26,13 +26,12 @@ export class AxiosApiClient implements ApiClient {
 
     async request<B, T>(method: Method ,path: string, body: Nullable<B>, headers: Nullable<Record<string, string>>): Promise<Result<T>>{
         try {
-            const response = await this.axiosInstance.request<T>({url: path, method, data: body,headers})
+            const response = await this.axiosInstance.request<T>({url: path, method, data: body, headers })
             return Result.ok<T>(response.data)
         } catch (e) {
             const error: AxiosError = e
-            const requestError = new RequestError(error.request.url, method, body, error.response?.status || 500, error.response?.data)
+            const requestError = new RequestError(path, method, body, error.response?.status || 500, error.response?.data)
             return Result.fail<T>(requestError)
         }
     }
-
 }

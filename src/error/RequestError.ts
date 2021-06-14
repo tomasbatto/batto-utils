@@ -10,7 +10,7 @@ export default class RequestError implements IError {
         return {
             requestUrl: this.url,
             requestMethod: this.method,
-            requestBody: this.body || {},
+            requestBody: this.body || null,
             statusCode: this.statusCode,
             responseData: this.responseBody 
         }
