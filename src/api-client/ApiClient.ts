@@ -1,4 +1,4 @@
-import Result from "../types/Result";
+import { Result } from "../types";
 
 export default interface ApiClient {
     post<B, T>(path: string, body: B, headers?: Record<string, string>): Promise<Result<T>>
