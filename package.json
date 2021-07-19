@@ -1,4 +1,7 @@
 {
+  "name": "batto-utils",
+  "author": "Tomas Batto",
+  "description": "Useful utils, types and classes",
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -9,6 +12,10 @@
   ],
   "engines": {
     "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomasbatto/batto-utils"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -31,8 +38,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "batto-utils",
-  "author": "Tomas Batto",
+  
   "module": "dist/batto-utils.esm.js",
   "size-limit": [
     {
