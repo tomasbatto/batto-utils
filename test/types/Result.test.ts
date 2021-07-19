@@ -1,12 +1,12 @@
-import { IError, Result } from '../../src';
+import { IError, Result } from '../../src'
 
 class ExampleError implements IError {
-    toJSON(): Record<string, any> {
-        return {something: true}
-    }
-    toString(): string {
-        return 'Error'
-    }
+  toJSON(): Record<string, any> {
+    return { something: true }
+  }
+  toString(): string {
+    return 'Error'
+  }
 }
 
 describe('Result.ts unit tests', () => {
@@ -17,7 +17,7 @@ describe('Result.ts unit tests', () => {
     expect(result.getValue()).toBeDefined()
     expect(result.error).toBeNull()
     expect(result.getValue()).toEqual('Success!')
-  });
+  })
   it('should return a succesful Result object with a value and no error', () => {
     const result = Result.fail<string>(new ExampleError())
     expect(result.isSuccess).toBeFalsy()
@@ -25,5 +25,5 @@ describe('Result.ts unit tests', () => {
     expect(result.getValue).toThrowError()
     expect(result.error).toBeDefined()
     expect(result.error?.toString()).toEqual('Error')
-  });
-});
+  })
+})

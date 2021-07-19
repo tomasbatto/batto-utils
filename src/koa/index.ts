@@ -1,5 +1,3 @@
-import JSONController from "./JSONController";
+import JSONController from './JSONController'
 
-export {
-    JSONController
-}
+export { JSONController }
